@@ -1,0 +1,13 @@
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  padding: 112px 64px 112px 64px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 48px 24px 48px 24px;
+  }
+}
