@@ -1,0 +1,23 @@
+---
+interface Props {
+  text?: string;
+  width?: string;
+  textColor?: string;
+  bgColor?: string;
+  borderColor?: string;
+}
+
+const {
+  text = "View more",
+  width = "w-96",
+  textColor = "text-black",
+  bgColor = "bg-white",
+  borderColor = "border-black",
+} = Astro.props;
+---
+
+<button
+  class={`border ${width} ${textColor} ${bgColor} ${borderColor} py-3 px-6 max-w-full rounded`}
+>
+  {text}
+</button>
