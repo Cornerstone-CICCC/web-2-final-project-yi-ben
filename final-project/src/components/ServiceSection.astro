@@ -37,7 +37,7 @@ const secondRowServices = [
   <p class="text-lg font-bold">We work on</p>
   <p class="text-[32px] font-bold">All Makes & Models</p>
   <div class="flex flex-col gap-6">
-    <div class="flex gap-12 justify-center">
+    <div class="hidden md:flex gap-12 justify-center">
       {
         firstRowLogos.map((logo) => (
           <div>
@@ -51,7 +51,7 @@ const secondRowServices = [
         ))
       }
     </div>
-    <div class="flex gap-12 justify-center">
+    <div class="flex flex-col sm:flex-row gap-12 justify-center items-center">
       {
         secondRowLogos.map((logo) => (
           <div>
@@ -64,6 +64,11 @@ const secondRowServices = [
           </div>
         ))
       }
+    </div>
+    <div class="block sm:hidden gap-12 justify-center">
+      <button class="border border-black py-3 px-6 w-96 max-w-100">
+        View more
+      </button>
     </div>
   </div>
 </div>
