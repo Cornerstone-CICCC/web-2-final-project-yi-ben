@@ -31,8 +31,9 @@ h5 {
 }
 
 @media screen and (max-width: 768px) {
-  .container {
+  .section-container {
     padding: 48px 24px 48px 24px;
+    margin: 0 auto;
   }
 }
 
