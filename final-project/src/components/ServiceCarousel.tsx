@@ -37,8 +37,13 @@ const ServiceCarousel: React.FC = () => {
           {Array.from({ length: serviceNum }).map((_, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="flex flex-col p-8 gap-12 border border-black justify-center items-center">
-                <div className="self-start">
+                <div className="self-start hidden sm:block">
                   <img src="/service/webflow.svg"></img>
+                </div>
+                <div className="self-start sm:hidden flex">
+                  {Array.from({ length: 5 - index }).map((_, index) => (
+                    <img key={index} src="/service/star.svg"></img>
+                  ))}
                 </div>
                 <div className="flex flex-col gap-6">
                   <p>
