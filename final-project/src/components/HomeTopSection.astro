@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+import Button from "./Button.astro";
+const text = "Book Your Appointment Now";
+const width = "w-auto";
+---
+
+<div class="homeTop bg-black w-full relative">
+    <div>
+        <img
+            class="opacity-50 object-cover object-center w-full h-[575px] md:h-[900px]"
+            src="https://s3-alpha-sig.figma.com/img/0bcc/4612/9e478cb3833abeb144399eb395fbc9dd?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ec-rlYvXgUKi6IetSkBmTl5VqOjBhoQ46o-bF~D3cn8Ttt6OASLhcUUyxy6ESzz45CoEx~tk785SwpczJHZKQP5TfEKZvJeQOV0CeQlvlu23rHw0sLs9Q2DSoIEnhC8WCDgVUXtJNdMEpeMSHSSVyUE8vlxRhKUtf2MC3hvlZqStIrEyvcH2PXZZeiM1110kRGTg5pQkA0EIAzjECabk4lutUZj3v89wVtodz2OJfATfxfuDEU4W4cji7W9OeqPjF16VnbWpXOh-16GRMP4MwkK1psOUuILaj10gNAUl3PSBszQ5KKNzBAAoRBhnhsTiRKS0KcmKacALX1GAHHGexA__"
+            alt=""
+        />
+        <div class="title-content px-6 md:px-16">
+            <div
+                class="h-auto absolute top-1/2 translate-y-[-50%] text-white w-[362px] md:w-[560px] flex flex-col gap-6"
+            >
+                <p
+                    class="text-[40px]/[48px] font-bold md:text-[56px]/[67.2px] text-left"
+                >
+                    Expert Car Care You Can Trust
+                </p>
+                <p class="text-[18px]/[27px] font-normal">
+                    Get Back on the Road Quickly with Ddsgnr, Expert Car Care
+                    You Can Trust,Expert Car Care You Can TrustExpert Car Care
+                    You Can TrustExpert Car Care You Can TrustExpert Car Care
+                    You Can Trust
+                </p>
+                <Button text={text} width={width} text-base text-left />
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+</style>
