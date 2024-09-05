@@ -3,13 +3,17 @@ import Layout from "../layouts/Layout.astro";
 const title = "Home Page";
 import HomeTopSection from "@/components/HomeTopSection.astro";
 import AboutSection from "@/components/AboutSection.astro";
-import ServiceSection from "@/components/ServiceSection.astro";
+import AboutOurMission from "@/components/AboutOurMission.astro";
+import OurServicesSection from "../components/OurServicesSection.astro";
+import CustomerTestimonoalSection from "../components/CustomerTestimonialSection.astro";
 import ContactSection from "@/components/ContactSection.astro";
 ---
 
 <Layout title={title}>
   <HomeTopSection />
   <AboutSection />
-  <ServiceSection />
+  <AboutOurMission />
+  <OurServicesSection />
   <ContactSection />
+  <CustomerTestimonoalSection />
 </Layout>
