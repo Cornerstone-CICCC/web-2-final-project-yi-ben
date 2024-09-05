@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import ServiceImage from "./ServiceImage.astro";
-import Carousel from "./ServiceCarousel";
 import Button from "./Button.astro";
 
 const firstRowLogos = [
@@ -99,17 +98,6 @@ const secondRowServices = [
     </div>
     <div class="block sm:hidden w-full justify-center">
       <Button />
-    </div>
-  </div>
-  <div class="section-gray">
-    <div
-      class="section-container flex flex-col gap-20 justify-center items-start md:items-center"
-    >
-      <div class="flex flex-col gap-4 self-start md:self-auto">
-        <h2 class="text-start md:text-center">Customer testimonials</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <Carousel client:load />
     </div>
   </div>
 </div>
