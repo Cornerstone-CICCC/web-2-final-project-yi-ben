@@ -23,9 +23,7 @@ const { title } = Astro.props;
   </head>
   <body>
     <Header />
-    <h1 class="md:pt-2">{title}</h1>
-    <h1 class="text-3xl font-bold underline mt-2 text-red-300">Hello world!</h1>
-    <slot />
+    <div class="mt-[72px] md:mt-[126px]"><slot /></div>
     <Footer />
   </body>
 </html>

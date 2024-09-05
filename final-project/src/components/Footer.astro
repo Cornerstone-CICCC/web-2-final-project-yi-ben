@@ -2,8 +2,12 @@
 
 ---
 
-<footer class="md:py-20 md:px-16 py-12 px-6 flex flex-col md:gap-20 gap-5">
-  <container class="menu flex flex-col gap-8">
+<footer
+  class="w-full h-[371px] md:h-[334px] text-black bg-white md:py-20 md:px-16 py-12 px-6 flex flex-col md:row md:gap-20 gap-5"
+>
+  <div
+    class="menu flex flex-col md:flex-row md:items- md:justify-between gap-8"
+  >
     <div class="flex flex-row">
       <div class="ddsgnr gap-[8.02px] flex flex-row">
         <a class="ddsgnr-logo gap-[10.5px]" href=""
@@ -26,7 +30,7 @@
       </div>
     </div>
     <div class="w-auto flex flex-row">
-      <ul class="flex gap-[32px] justify-between">
+      <ul class="flex gap-[32px] justify-between flex-wrap">
         <li>
           <a
             href="#"
@@ -112,9 +116,9 @@
         </svg>
       </a>
     </div>
-  </container>
-  <container
-    class="buttom pt-6 border-t-[1px] border-black flex flex-col gap-6"
+  </div>
+  <div
+    class="buttom pt-6 border-t-[1px] border-black flex flex-col gap-6 md:items-center md:justify-center"
   >
     <div><p>2023 Ddsgnr. All right reserved.</p></div>
     <div class="flex gap-6">
@@ -122,20 +126,11 @@
       <a href="#"><u>Terms of Service</u></a>
       <a href="#"><u>Cookies Settings</u></a>
     </div>
-  </container>
+  </div>
 
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    footer {
-      width: 100vw;
-      height: 371px;
-      color: black;
-      background: gray;
-      position: fixed;
-      bottom: 0;
     }
 
     h2 {
@@ -158,23 +153,6 @@
       font-weight: 600;
       line-height: 24px;
       text-align: left;
-    }
-
-    @media screen and (min-width: 768px) {
-      footer {
-        height: 334px;
-      }
-      .menu {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .buttom {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-      }
     }
   </style>
 </footer>
