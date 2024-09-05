@@ -1,8 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 const title = "Home Page";
+import HomeTopSection from "@/components/HomeTopSection.astro";
+import AboutSection from "@/components/AboutSection.astro";
+import ServiceSection from "@/components/ServiceSection.astro";
+import ContactSection from "@/components/ContactSection.astro";
 ---
 
 <Layout title={title}>
-  <div class="container">I am Container!</div>
+  <HomeTopSection />
+  <AboutSection />
+  <ServiceSection />
+  <ContactSection />
 </Layout>
