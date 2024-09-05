@@ -2,10 +2,12 @@
 
 ---
 
-<header class="flex flex-col">
-  <container class="row-1 h-[54px] border-b-[1px] border-black justify-between">
+<header class="w-full text-black bg-white fixed top-0 flex flex-col z-10">
+  <div
+    class="row-group row-1 md:flex h-[54px] border-b-[1px] border-black justify-between z-9"
+  >
     <div class="info flex">
-      <ul class="gap-4">
+      <ul class="gap-4 flex flex-row">
         <li class="border-r-[1px] border-black">
           <h6>
             For emergency cases: <u> 800 123 45 67</u>
@@ -80,9 +82,11 @@
         </svg>
       </a>
     </div>
-  </container>
+  </div>
 
-  <container class="row-2 h-auto min-h-[72px] justify-between">
+  <div
+    class="row-group row-2 flex flex-col md:flex-row h-auto min-h-[72px] border-b-0 border-black md:border-b-[1px] justify-center md:justify-between z-8 relative"
+  >
     <div class="md:w-auto w-[100%] flex flex-row justify-between">
       <div class="ddsgnr gap-[8.02px] flex flex-row">
         <a class="ddsgnr-logo gap-[10.5px]" href=""
@@ -128,40 +132,46 @@
         </button>
       </div>
     </div>
-    <nav class="hide-nav items-center justify-between w-full md:flex md:w-auto">
-      <ul class="gap-[32px] items-center">
-        <li>
-          <a
-            href="#"
-            class="block py-2 px-3 hover:text-blue-700 md:p-0"
-            aria-current="page">Home</a
-          >
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 hover:text-blue-700 md:p-0"
-            >Services</a
-          >
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 hover:text-blue-700 md:p-0"
-            >About</a
-          >
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 hover:text-blue-700 md:p-0"
-            >Contact</a
-          >
-        </li>
-        <li>
-          <button
-            type="button"
-            class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-[5px] text-sm px-4 py-2 text-center"
-            >Book Your Appointment Now</button
-          >
-        </li>
-      </ul>
+    <nav id="slider" class="slide-up w-full md:flex md:w-auto justify-end">
+      <div
+        class="nav-group w-full bg-white border-b-[1px] border-black md:border-b-0 px-2 py-8 md:px-0 md:py-0"
+      >
+        <ul
+          class="gap-[32px] px-4 md:px-0 flex flex-col md:flex-row items-end md:items-center"
+        >
+          <li>
+            <a
+              href="#"
+              class="block py-2 px-3 hover:text-blue-700 md:p-0"
+              aria-current="page">Home</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 hover:text-blue-700 md:p-0"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 hover:text-blue-700 md:p-0"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 hover:text-blue-700 md:p-0"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <button
+              type="button"
+              class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-[5px] text-sm px-4 py-2 text-center"
+              >Book Your Appointment Now</button
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
-  </container>
+  </div>
 </header>
 
 <style>
@@ -169,15 +179,7 @@
     box-sizing: border-box;
   }
 
-  header {
-    width: 100vw;
-    color: #000000;
-    background-color: gray;
-    position: fixed;
-    top: 0;
-  }
-
-  container {
+  .row-group {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -207,20 +209,6 @@
     padding-right: 8px;
   }
 
-  .row-1 {
-    display: flex;
-  }
-
-  .row-2 {
-    display: flex;
-    flex-direction: row;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-  }
-
   li {
     font-family: "roboto";
     font-size: 16px;
@@ -238,36 +226,46 @@
   }
 
   @media screen and (max-width: 768px) {
-    container {
-      padding: 29px 24px 29px 24px;
+    .row-group {
+      padding: 0 24px 0 24px;
     }
 
     .row-1 {
       display: none;
     }
 
-    .row-2 {
-      flex-direction: column;
+    nav {
+      position: absolute;
+      top: 72px;
+      width: 100%;
     }
 
-    .hide-nav {
-      display: none;
+    .slide-up,
+    .slide-down {
+      overflow: hidden;
     }
-
-    ul {
-      flex-direction: column;
-      align-items: end;
-      margin: 2rem 0 0 0;
+    .slide-up > div,
+    .slide-down > div {
+      transform: translateY(-99%);
+      transition: 0.8s ease-in-out;
+    }
+    .slide-down > div {
+      transform: translateY(0);
     }
   }
 </style>
 
 <script>
   const hamBtn = document.querySelector("#ham");
-  const nav = document.querySelector("nav");
-  const hideNav = document.querySelector(".hide-nav");
+  const slider = document.querySelector("#slider");
+
+  // slideup/slidedown
+  const trigger = function () {
+    slider.classList.toggle("slide-down");
+    slider.classList.toggle("slideup");
+  };
 
   hamBtn.addEventListener("click", () => {
-    nav.classList.toggle("hide-nav");
+    trigger();
   });
 </script>
