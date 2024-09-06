@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaChevronRight } from "react-icons/fa";
 import {
   Carousel,
   CarouselContent,
@@ -45,19 +46,27 @@ const ServiceCarousel: React.FC = () => {
                     <img key={index} src="/service/star.svg"></img>
                   ))}
                 </div>
-                <div className="flex flex-col gap-6">
-                  <p>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse varius enim in eros elementum tristique. Duis
-                    cursus, mi quis viverra ornare."
-                  </p>
-                  <div className="flex gap-5">
-                    <div>
-                      <img src={`/icon/icon${index + 1}.svg`} alt="icon" />
+                <div className="flex flex-col gap-8">
+                  <div className="flex flex-col gap-6">
+                    <p>
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Suspendisse varius enim in eros elementum tristique. Duis
+                      cursus, mi quis viverra ornare."
+                    </p>
+                    <div className="flex gap-5">
+                      <div>
+                        <img src={`/icon/icon${index + 1}.svg`} alt="icon" />
+                      </div>
+                      <div>
+                        <p className="font-bold">Name Surname</p>
+                        <p>Position, Company name</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-bold">Name Surname</p>
-                      <p>Position, Company name</p>
+                  </div>
+                  <div className="items-center hidden md:flex">
+                    <button>Read case study</button>
+                    <div className="h-6 w-6 flex items-center justify-center">
+                      <FaChevronRight size={16} />
                     </div>
                   </div>
                 </div>
