@@ -1,14 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const title = "Home Page";
 import HomeTopSection from "@/components/HomeTopSection.astro";
 import AboutSection from "@/components/AboutSection.astro";
 import AboutOurMission from "@/components/AboutOurMission.astro";
 import OurServicesSection from "../components/OurServicesSection.astro";
-import CustomerTestimonoalSection from "../components/CustomerTestimonialSection.astro";
 import ContactSection from "@/components/ContactSection.astro";
 import HomeOurTeam from "@/components/HomeOurTeam.astro";
+import CustomerTestimonoalSection from "../components/CustomerTestimonialSection.astro";
 import HomeFAQS from "@/components/HomeFAQS.astro";
+import AppointmentSection from "@/components/AppointmentSection.astro";
+
+const title = "Home Page";
 ---
 
 <Layout title={title}>
@@ -20,4 +22,5 @@ import HomeFAQS from "@/components/HomeFAQS.astro";
   <HomeOurTeam />
   <CustomerTestimonoalSection />
   <HomeFAQS />
+  <AppointmentSection />
 </Layout>
