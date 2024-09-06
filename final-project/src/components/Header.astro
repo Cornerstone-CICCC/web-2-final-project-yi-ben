@@ -237,14 +237,24 @@
 
     .slide-up,
     .slide-down {
+      transition: 0.8s ease-in-out;
       overflow: hidden;
     }
-    .slide-up > div,
-    .slide-down > div {
-      transform: translateY(-99%);
+
+    .slide-up {
+      height: 4px;
+    }
+
+    .slide-down {
+      height: 400px;
+    }
+
+    .slide-up > div {
       transition: 0.8s ease-in-out;
+      transform: translateY(-99%);
     }
     .slide-down > div {
+      transition: 0.8s ease-in-out;
       transform: translateY(0);
     }
   }
@@ -257,7 +267,7 @@
   // slideup/slidedown
   const trigger = function () {
     slider.classList.toggle("slide-down");
-    slider.classList.toggle("slideup");
+    slider.classList.toggle("slide-up");
   };
 
   hamBtn.addEventListener("click", () => {
