@@ -1,7 +1,3 @@
----
-
----
-
 <header class="w-full text-black bg-white fixed top-0 flex flex-col z-10">
   <div
     class="row-group row-1 md:flex h-[54px] border-b-[1px] border-black justify-between z-9"
@@ -142,31 +138,24 @@
           <li>
             <a
               href="/"
-              class="block py-2 px-3 hover:text-blue-700 md:p-0"
-              aria-current="page">Home</a
-            >
+              class="block py-2 px-3 md:p-0 hover:font-bold"
+              aria-current="page"
+              >Home
+            </a>
           </li>
           <li>
-            <a
-              href="/service"
-              class="block py-2 px-3 hover:text-blue-700 md:p-0">Services</a
-            >
+            <a href="/service" class="block py-2 px-3 md:p-0">Services</a>
           </li>
           <li>
-            <a href="/about" class="block py-2 px-3 hover:text-blue-700 md:p-0"
-              >About</a
-            >
+            <a href="/about" class="block py-2 px-3 md:p-0">About</a>
           </li>
           <li>
-            <a
-              href="/contact"
-              class="block py-2 px-3 hover:text-blue-700 md:p-0">Contact</a
-            >
+            <a href="/contact" class="block py-2 px-3 md:p-0">Contact</a>
           </li>
           <li>
             <button
               type="button"
-              class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-[5px] text-sm px-4 py-2 text-center"
+              class="text-white hover:text-black bg-black hover:bg-white border-[1px] border-black focus:outline-none transition-all duration-300 font-medium rounded-[5px] text-sm px-4 py-2 text-center"
               >Book Your Appointment Now</button
             >
           </li>
@@ -202,6 +191,10 @@
     font-weight: 600;
     line-height: 24px;
     padding-right: 8px;
+  }
+
+  ul li a:hover {
+    font-weight: 700;
   }
 
   p {

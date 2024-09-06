@@ -1,8 +1,6 @@
 ---
 import "../styles/global.css";
-import Button from "./Button.astro";
 const text = "Book Your Appointment Now";
-const width = "w-auto";
 ---
 
 <div class="homeTop bg-black w-full relative">
@@ -27,7 +25,12 @@ const width = "w-auto";
                     You Can TrustExpert Car Care You Can TrustExpert Car Care
                     You Can Trust
                 </p>
-                <Button text={text} width={width} text-base text-left />
+
+                <button
+                    type="button"
+                    class="w-full md:w-fit text-black hover:text-white bg-white hover:bg-black border-[1px] border-white focus:outline-none transition-all duration-300 rounded-[5px] text-center px-6 py-3 text-[16px]/[24px] font-normal"
+                    >{text}
+                </button>
             </div>
         </div>
     </div>
