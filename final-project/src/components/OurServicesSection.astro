@@ -20,6 +20,12 @@ const secondRowLogos = [
   { id: 7, alt: "racing" },
 ];
 
+const hiddenLogos = [
+  { id: 2, alt: "bmw" },
+  { id: 5, alt: "honda" },
+  { id: 6, alt: "aqua" },
+];
+
 const firstRowServices = [
   { id: 1, title: "Engine services" },
   { id: 2, title: "Air conditioning" },
@@ -46,7 +52,7 @@ const secondRowServices = [
           <div>
             <Image
               src={`/logo/logo${logo.id}.svg`}
-              alt="hogehuga"
+              alt={logo.alt}
               width={100}
               height={100}
             />
@@ -60,7 +66,19 @@ const secondRowServices = [
           <div>
             <Image
               src={`/logo/logo${logo.id}.svg`}
-              alt="hogehuga"
+              alt={logo.alt}
+              width={100}
+              height={100}
+            />
+          </div>
+        ))
+      }
+      {
+        hiddenLogos.map((logo) => (
+          <div class="hidden hidden-logos">
+            <Image
+              src={`/logo/logo${logo.id}.svg`}
+              alt={logo.alt}
               width={100}
               height={100}
             />
@@ -69,7 +87,7 @@ const secondRowServices = [
       }
     </div>
     <div class="block sm:hidden gap-12 justify-center w-[calc(100vw-48px)]">
-      <Button />
+      <Button className="logos-show-btn" />
     </div>
   </div>
 </div>
@@ -89,7 +107,7 @@ const secondRowServices = [
         ))
       }
     </div>
-    <div class="hidden sm:flex sm:flex-row flex-wrap gap-8">
+    <div class="hidden sm:flex sm:flex-row flex-wrap gap-8" id="service-row-2">
       {
         secondRowServices.map((service) => (
           <ServiceImage id={service.id} title={service.title} />
@@ -97,7 +115,31 @@ const secondRowServices = [
       }
     </div>
     <div class="block sm:hidden w-full justify-center">
-      <Button bgColor="bg-[#f7f7f7]" />
+      <Button bgColor="bg-[#f7f7f7]" className="service-show-btn" />
     </div>
   </div>
 </div>
+
+<script>
+  const logosShowBtn = document.querySelector(".logos-show-btn");
+  const serviceShowBtn = document.querySelector(".service-show-btn");
+  document.addEventListener("DOMContentLoaded", () => {
+    logosShowBtn.addEventListener("click", (e) => {
+      const hiddenLogos = document.querySelectorAll(".hidden-logos");
+      hiddenLogos.forEach((logo) => {
+        logo.classList.remove("hidden");
+      });
+      logosShowBtn.classList.add("hidden");
+    });
+
+    serviceShowBtn.addEventListener("click", (e) => {
+      const hiddenRow = document.getElementById("service-row-2");
+      if (hiddenRow) {
+        hiddenRow.classList.remove("hidden");
+        hiddenRow.classList.add("flex");
+        hiddenRow.classList.add("-mt-12");
+        serviceShowBtn.classList.add("hidden");
+      }
+    });
+  });
+</script>
